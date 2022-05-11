@@ -1,14 +1,11 @@
 import React from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
+import {View, TouchableOpacity} from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons'
 import Styles from './styles';
-import NewNote from '../../Screens/newNote/NewNote';
 const FooterTab = ({navigation}) =>{
-  // const navigation = useNavigation();
     return (
       <View style={Styles.FooterWrapper}>
         <View style={Styles.FooterCol1}>
@@ -30,6 +27,7 @@ const FooterTab = ({navigation}) =>{
           </View>
         </View>
         <View style={Styles.FooterCol2}>
+          {/* onPress should go to New Note page */}
           <TouchableOpacity style={Styles.FooterIcons}>
             <AntDesign name="plus" size={35} color="red" onPress={()=>navigation.navigate('newNote')} />
           </TouchableOpacity>

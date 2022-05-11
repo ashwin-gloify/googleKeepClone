@@ -1,4 +1,3 @@
-// contains all posts and all the notes and lables.
 import React, {useState, useEffect} from 'react';
 import {
   View,
@@ -10,7 +9,6 @@ import {
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Styles from './styles';
-// import dummyPosts from '../../data/dummyPost';
 import FooterTab from '../../components/footerTab/FooterTab';
 import {useSelector} from 'react-redux';
 
@@ -50,7 +48,7 @@ const Home = ({navigation}) => {
     setSearch(text);
   };
 
-  //responsible for rendering both lists with the data as a parameter
+  //responsible for rendering both lists with the data(array) as a parameter
   const renderList = (dataName)=>{
    return(  
      dataName.map( (item, index) =>{
@@ -108,18 +106,6 @@ const Home = ({navigation}) => {
             <View style={Styles.mapContainer}>
               {/* rendering pinned list  */}
               {renderList(pinnedData)}
-              {/* {pinnedData.map((item, index) => {
-                return (
-                  <View style={Styles.renderContainer} key={index}>
-                    <View style={Styles.titleContainer}>
-                      <Text style={Styles.titleText}>{item.title}</Text>
-                    </View>
-                    <View style={Styles.textContainer}>
-                      <Text style={Styles.noteText}>{item.text}</Text>
-                    </View>
-                  </View>
-                );
-              })} */}
             </View>
           </View>
           <View style={Styles.listContainer}>
@@ -129,19 +115,6 @@ const Home = ({navigation}) => {
             <View style={Styles.mapContainer}>
               {/* rendering Others list */}
               {renderList(otherData)}
-
-              {/* {otherData.map((item, index) => {
-                return (
-                  <View style={Styles.renderContainer} key={index}>
-                    <View style={Styles.titleContainer}>
-                      <Text style={Styles.titleText}>{item.title}</Text>
-                    </View>
-                    <View style={Styles.textContainer}>
-                      <Text style={Styles.noteText}>{item.text}</Text>
-                    </View>
-                  </View>
-                );
-              })} */}
             </View>
           </View>
         </View>
