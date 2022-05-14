@@ -4,7 +4,8 @@ import {
   Text,
   TextInput,
   Image,
-  ScrollView
+  ScrollView,
+  TouchableOpacity
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
@@ -16,15 +17,15 @@ import {useSelector} from 'react-redux';
 const Home = ({navigation}) => {
   const [search, setSearch] = useState('');
   const notes = useSelector((state)=> state.NoteReducer);
-
   //dummmy data is the initial mockup data coming through store
   const [dummyData, setDummyData] = useState([]);
   //dummy data into Pinned and others - to use with map 
   const [pinnedData, setPinnedData] = useState([]);
   const [otherData, setOtherData] = useState([]);
-
+ 
   //setting mockup dummy data
   useEffect(()=>{
+    
    setDummyData(notes);
   },[notes])
 
@@ -53,14 +54,17 @@ const Home = ({navigation}) => {
    return(  
      dataName.map( (item, index) =>{
       return (
-        <View style={Styles.renderContainer} key={index}>
+        <TouchableOpacity 
+            style={Styles.renderContainer}
+            key={index}   
+            onPress={()=>{navigation.navigate('EditNote', {note : item})}}>
           <View style={Styles.titleContainer}>
             <Text style={Styles.titleText}>{item.title}</Text>
           </View>
           <View style={Styles.textContainer}>
             <Text style={Styles.noteText}>{item.text}</Text>
           </View>
-        </View>
+        </TouchableOpacity>
       );
     })
    )
@@ -124,6 +128,6 @@ const Home = ({navigation}) => {
       </View>
     </View>
   );
-};
+}
 
 export default Home;

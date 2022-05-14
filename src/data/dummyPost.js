@@ -6,7 +6,6 @@ const dummyPosts = [
     text: 'This is a dummy post, man. What do you even expect',
     title: 'dummy title',
     pinned: false,
-    section: 'Others',
   },
   {
     id: 2,
@@ -15,7 +14,6 @@ const dummyPosts = [
     text: 'This is a dummy post, man. What do you even expect',
     title: 'dummy title',
     pinned: false,
-    section: 'Others',
   },
   {
     id: 3,
@@ -24,7 +22,6 @@ const dummyPosts = [
     text: 'This is a dummy post, man. What do you even expect',
     title: 'dummy title',
     pinned: false,
-    section: 'Others',
   },
   {
     id: 4,
@@ -33,7 +30,6 @@ const dummyPosts = [
     text: 'This is a dummy post, man. What do you even expect . Lorem iipsum dolor seth Lorem ipsum dolor eth seth ',
     title: 'dummy title. ',
     pinned: false,
-    section: 'Others',
   },
   {
     id: 5,
@@ -69,7 +65,6 @@ const dummyPosts = [
     text: 'This is a dummy post, man. What do you even expect',
     title: 'dummy title',
     pinned: false,
-    section: 'Others',
   },
   {
     id: 9,
@@ -87,7 +82,6 @@ const dummyPosts = [
     text: 'This is a dummy post, man. What do you even expect',
     title: 'dummy title',
     pinned: false,
-    section: 'Others',
   },
   {
     id: 11,
@@ -105,7 +99,6 @@ const dummyPosts = [
     text: 'This is a dummy post, man. What do you even expect',
     title: 'dummy title',
     pinned: false,
-    section: 'Others',
   },
   {
     id: 13,
@@ -114,7 +107,6 @@ const dummyPosts = [
     text: 'This is a dummy post, man. What do you even expect',
     title: 'dummy title',
     pinned: false,
-    section: 'Others',
   },
   {
     id: 14,
@@ -123,7 +115,6 @@ const dummyPosts = [
     text: 'This is a dummy post, man. What do you even expect',
     title: 'dummy title',
     pinned: false,
-    section: 'Others',
   },
 ];
 export default dummyPosts;

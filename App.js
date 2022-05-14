@@ -1,36 +1,51 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
 import Home from './src/Screens/homeScreen/home';
-import {createDrawerNavigator} from '@react-navigation/drawer';
-import {NavigationContainer} from '@react-navigation/native';
 import NewNote from './src/Screens/newNote/NewNote';
+import EditNote from './src/Screens/editNote/EditNote';
+import {createDrawerNavigator} from '@react-navigation/drawer';
+import {createStackNavigator} from '@react-navigation/stack';
+import {NavigationContainer} from '@react-navigation/native';
 import store from './src/redux/store';
 import {Provider} from 'react-redux';
+
+//Navigators
+const Stack = createStackNavigator();
 const Drawer =   createDrawerNavigator();
+
+const DrawerMenu = () =>{
+  return (
+    <Drawer.Navigator>
+      <Drawer.Screen
+        name="home"
+        component={Home}
+        options={{headerShown: false}}
+      />
+
+      
+    </Drawer.Navigator>
+  );
+}
 const App = () => {
   return (
-    <Provider store ={store}>
+    <Provider store={store}>
       <NavigationContainer>
-        <Drawer.Navigator>
-            <Drawer.Screen
-              name="home"
-              component={Home}
-              options={{headerShown: false}}
-            />
-      
-          <Drawer.Screen
+        <Stack.Navigator initialRouteName="Drawer">
+          <Stack.Screen
+            name="Drawer"
+            component={DrawerMenu}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="EditNote"
+            component={EditNote}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
             name="newNote"
             component={NewNote}
             options={{headerShown: false}}
           />
-        </Drawer.Navigator>
+        </Stack.Navigator>
       </NavigationContainer>
     </Provider>
   );
